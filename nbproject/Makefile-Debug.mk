@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/bank_account.o \
 	${OBJECTDIR}/integral.o \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/matrix.o \
 	${OBJECTDIR}/primes.o \
 	${OBJECTDIR}/time_demo.o
 
@@ -80,6 +81,11 @@ ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/matrix.o: matrix.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/matrix.o matrix.cpp
 
 ${OBJECTDIR}/primes.o: primes.cpp
 	${MKDIR} -p ${OBJECTDIR}
